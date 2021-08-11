@@ -23,10 +23,13 @@ function Home() {
         <ContinueButton
           onClick={() => {
             if (userName && userSurname) {
-              axios.post("https://localhost:5001/api/account", {
-                name: userName,
-                surname: userSurname,
-              });
+              axios.post(
+                "https://rekrutacja-api-app.azurewebsites.net/api/account",
+                {
+                  name: userName,
+                  surname: userSurname,
+                }
+              );
               setUserName("");
               setUserSurname("");
             } else {

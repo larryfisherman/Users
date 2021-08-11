@@ -10,12 +10,14 @@ function User() {
 
   useEffect(() => {
     axios
-      .get("https://localhost:5001/api/account")
+      .get("https://rekrutacja-api-app.azurewebsites.net/api/account")
       .then((res) => setAllUsers(res.data));
   }, [allUsers]);
 
   const deleteUser = (userId) => {
-    axios.delete(`https://localhost:5001/api/account/${userId}`);
+    axios.delete(
+      `https://rekrutacja-api-app.azurewebsites.net/api/account/${userId}`
+    );
   };
 
   return (

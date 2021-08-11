@@ -8,10 +8,13 @@ function ModifyUserModal({ showModal, userId }) {
 
   const modifyUser = () => {
     if (username && surname) {
-      axios.put(`https://localhost:5001/api/account/${userId}`, {
-        name: username,
-        surname: surname,
-      });
+      axios.put(
+        `https://rekrutacja-api-app.azurewebsites.net/api/account/${userId}`,
+        {
+          name: username,
+          surname: surname,
+        }
+      );
       setUsername("");
       setSurname("");
     } else {
